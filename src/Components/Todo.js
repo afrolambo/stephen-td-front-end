@@ -78,7 +78,7 @@ class Todo extends React.Component {
     return (
 
       <div className="App">
-        <h2>My tasks</h2>
+        <h1>My tasks</h1>
         <Categories selected={this.state.selected} categories={this.state.categories} clickHandler={this.clickHandler}/>
         <TaskContainer taskHandler={this.addTaskHandler} tasks={this.state.tasks} done={this.doneHandler} />
       </div>

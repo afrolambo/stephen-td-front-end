@@ -1,0 +1,30 @@
+@import 'colors';
+
+$base-font: 15px;
+
+@mixin sample {
+    font-size: $base-font;
+    color: black;
+}
+
+.sample-element{
+    @include sample;
+    button {
+        background-color: $myBlue;
+        font-size: 30px;
+    }
+}
+
+h1 {
+    color: $myBlue;
+}
+
+.delete {
+    color: $myRed;
+}
+
+.navLink {
+    font-size: 20px;
+}
+
+

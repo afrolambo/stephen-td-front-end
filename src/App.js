@@ -6,6 +6,8 @@ import Home from './Components/Home'
 import Todo from './Components/Todo'
 import Login from './Components/Login'
 import Register from './Components/Register'
+import Timer from './Components/Timer'
+import './App.scss';
 import 'semantic-ui-css/semantic.min.css'
 import {Menu } from 'semantic-ui-react'
 
@@ -52,6 +54,8 @@ class App extends React.Component {
         <Route exact path="/todo" component={Todo} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" render={() => <Register submitHandler={this.registerSubmitHandler}/>} />
+        <Route exact path="/timer" component={Timer} />
+        
 
    
       </div>
