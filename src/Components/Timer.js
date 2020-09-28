@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import App from '../App'
+import {Redirect} from 'react-router-dom'
 
-function Timer() {
+function Timer(props) {
 
     const [count, setCount] = useState(() => {
         
@@ -16,11 +16,19 @@ function Timer() {
     }
 
     return (
-        <>
-            <button onClick={decrementCount}>-</button>
-            <span>{count}</span>
-            <button onClick={incrementCount}>+</button>
-        </>
+
+        <> 
+        {props.user ? 
+            <>
+                <button onClick={decrementCount}>-</button>
+                <span>{count}</span>
+                <button onClick={incrementCount}>+</button>
+            </>
+
+        :
+            <Redirect to="/" />
+        }
+       </>
     )
 }
 

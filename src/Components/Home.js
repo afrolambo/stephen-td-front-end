@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
+import ZodiacContainer from '../Container/ZodiacContainer'
 
 function Home () {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -16,7 +17,10 @@ function Home () {
     }, [])
 
         return (
-            <div className="App">{windowWidth}</div>
+            <>
+                <div className="App">{windowWidth}</div>
+                <ZodiacContainer />
+            </>
         );
     
 }

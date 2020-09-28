@@ -1,5 +1,6 @@
 import React from 'react';
 import { CATEGORIES } from '../data'
+import { Redirect } from 'react-router-dom'
 import TaskContainer from '../Container/TaskContainer'
 import Categories from './Categories'
 
@@ -74,14 +75,23 @@ class Todo extends React.Component {
   }
 
   render() {
-
+    console.log("Current User: ", this.props.user)
     return (
+      <>
+        {this.props.user ? 
+          <div className="App">
+            <h1>My tasks</h1>
+            <Categories selected={this.state.selected} categories={this.state.categories} clickHandler={this.clickHandler}/>
+            <TaskContainer taskHandler={this.addTaskHandler} tasks={this.state.tasks} done={this.doneHandler} />
+          </div>
 
-      <div className="App">
-        <h1>My tasks</h1>
-        <Categories selected={this.state.selected} categories={this.state.categories} clickHandler={this.clickHandler}/>
-        <TaskContainer taskHandler={this.addTaskHandler} tasks={this.state.tasks} done={this.doneHandler} />
-      </div>
+        :  
+        
+        <Redirect to="/" />
+        }
+      </>
+
+      
     );
   }
 }
