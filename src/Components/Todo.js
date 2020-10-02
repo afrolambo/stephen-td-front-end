@@ -73,6 +73,7 @@ class Todo extends React.Component {
       tasks: newTaskList
     })
   }
+  
 
   render() {
     console.log("Current User: ", this.props.user)
@@ -81,6 +82,7 @@ class Todo extends React.Component {
         {this.props.user ? 
           <div className="App">
             <h1>My tasks</h1>
+            
             <Categories selected={this.state.selected} categories={this.state.categories} clickHandler={this.clickHandler}/>
             <TaskContainer taskHandler={this.addTaskHandler} tasks={this.state.tasks} done={this.doneHandler} />
           </div>
